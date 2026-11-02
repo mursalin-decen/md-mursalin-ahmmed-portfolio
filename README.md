@@ -20,7 +20,7 @@ You can also deploy the folder with Vercel CLI using `vercel` from this director
 - Confirm the displayed LinkedIn URL, WhatsApp number, and contact email.
 - GitHub, LinkedIn, WhatsApp, and CV shortcuts are available in the floating social dock.
 - The résumé PDF is included at `assets/Mursalin_CV.pdf`.
-- Replace project descriptions or add screenshots if you want exact product screenshots. The project artwork in this version is custom CSS artwork, not screenshots from the live products.
+- Most project previews use custom CSS artwork rather than screenshots from live products. The Rain Sensor project includes its own photos and demo video in `Rain Sensor/`.
 - The `7+` donor figure shown in the Blood Donation BD preview came from the live site's visible homepage at the time this portfolio was prepared; update it if the count changes.
 
 ## Files
