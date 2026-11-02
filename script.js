@@ -1,0 +1,13 @@
+const loader=document.getElementById('loader');
+window.addEventListener('load',()=>setTimeout(()=>loader.classList.add('hide'),550));
+const navWrap=document.querySelector('.nav-wrap');
+window.addEventListener('scroll',()=>navWrap.classList.toggle('scrolled',window.scrollY>25));
+const menuToggle=document.getElementById('menuToggle'),navLinks=document.getElementById('navLinks');
+menuToggle.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+const roles=['CSE STUDENT','WEB DEVELOPER','PYTHON ENTHUSIAST','CREATIVE BUILDER'];let roleIndex=0,charIndex=0,deleting=false;const typed=document.getElementById('typedRole');
+function typeRole(){const word=roles[roleIndex];typed.textContent=word.substring(0,charIndex);if(!deleting&&charIndex<word.length){charIndex++;setTimeout(typeRole,85)}else if(!deleting){deleting=true;setTimeout(typeRole,1250)}else if(charIndex>0){charIndex--;setTimeout(typeRole,38)}else{deleting=false;roleIndex=(roleIndex+1)%roles.length;setTimeout(typeRole,300)}}setTimeout(typeRole,900);
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{document.querySelector('.filter.active').classList.remove('active');button.classList.add('active');const filter=button.dataset.filter;document.querySelectorAll('.project-card').forEach(card=>{const show=filter==='all'||card.dataset.category===filter;card.classList.toggle('hidden',!show)})}));
+const glow=document.querySelector('.cursor-glow');window.addEventListener('pointermove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
+document.getElementById('year').textContent=new Date().getFullYear();
